@@ -6,9 +6,19 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/NavyaPatil10/simple-java-maven-app.git'
             }
         }
-        stage('Verify') {
+        stage('Build') {
             steps {
-                echo 'Repository cloned successfully!'
+                echo 'Simulating build stage...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Simulating test stage...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Simulating deployment...'
             }
         }
     }
