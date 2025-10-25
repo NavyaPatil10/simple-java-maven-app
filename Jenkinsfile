@@ -1,9 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Build') { 
+        stage('Checkout') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                git branch: 'master', url: 'https://github.com/NavyaPatil10/simple-java-maven-app.git'
+            }
+        }
+        stage('Verify') {
+            steps {
+                echo 'Repository cloned successfully!'
             }
         }
     }
